@@ -1,0 +1,8 @@
+Full shutdown (save CPU / cost)
+k3d cluster stop local-k8s
+sudo systemctl stop docker
+sudo systemctl stop docker.socket
+
+🚀 Start everything again
+sudo systemctl start docker
+k3d cluster start local-k8s
