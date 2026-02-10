@@ -1,0 +1,47 @@
+# ============================================================================
+# TERRAFORM VALUES CONFIGURATION FILE
+# Copy this file to terraform.tfvars and update with your values
+# ============================================================================
+
+# AWS Region
+aws_region = "us-east-1"
+
+# Project Name (used for resource naming)
+project_name = "k3d-microservices"
+
+# EC2 Instance Type
+# Options:
+#   t3.large   = 2 CPUs, 8GB RAM (minimum recommended)
+#   t3.xlarge  = 4 CPUs, 16GB RAM (production)
+#   t3.2xlarge = 8 CPUs, 32GB RAM (high-performance)
+instance_type = "t3.large"
+
+# Root Volume Size in GB (minimum 30GB)
+root_volume_size = 50
+
+# EC2 Key Pair Name
+# IMPORTANT: Create this key pair in AWS Console first!
+# AWS Console → EC2 → Key Pairs → Create Key Pair
+# Then paste the name here (without .pem extension)
+key_pair_name = "k3d-microservices"
+
+# CIDR blocks allowed for SSH access
+# SECURITY WARNING: Do NOT use "0.0.0.0/0" in production!
+# Replace with your specific IP address: "YOUR.IP.ADDRESS/32"
+# To find your IP: curl checkip.amazonaws.com
+allowed_ssh_cidr = ["0.0.0.0/0"]
+
+# Environment
+# Options: development, staging, production
+environment = "development"
+
+# Enable CloudWatch monitoring
+enable_monitoring = true
+
+# Additional tags for resource tracking
+tags = {
+  CreatedBy  = "Terraform"
+  Purpose    = "K3d-Microservices"
+  ManagedBy  = "IaC"
+  Environment = "development"
+}
