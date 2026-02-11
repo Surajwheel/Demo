@@ -42,7 +42,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: local-storage
+  storageClassName: local-path
   local:
     path: /tmp/k3d-storage/postgres
   nodeAffinity:
@@ -65,7 +65,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: local-storage
+  storageClassName: local-path
   local:
     path: /tmp/k3d-storage/redis
   nodeAffinity:
@@ -88,7 +88,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: local-storage
+  storageClassName: local-path
   local:
     path: /tmp/k3d-storage/mongodb
   nodeAffinity:
@@ -133,7 +133,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-storage
+  storageClassName: local-path
   resources:
     requests:
       storage: 10Gi
@@ -242,7 +242,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-storage
+  storageClassName: local-path
   resources:
     requests:
       storage: 5Gi
@@ -353,7 +353,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-storage
+  storageClassName: local-path
   resources:
     requests:
       storage: 10Gi
