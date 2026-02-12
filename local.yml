@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: ConfigMap
+metadata:
+  name: swaggerql-config
+  namespace: database
+data:
+  DB: petstore
+  USER: myuser
+  Password: secret

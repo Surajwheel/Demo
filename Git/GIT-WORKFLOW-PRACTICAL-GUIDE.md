@@ -31,11 +31,11 @@ git pull origin develop
 git checkout -b feature/add-user-validation
 
 # 3. Make changes to files
-# Edit: 6-user-service.yaml
+# Edit: user-service.yaml
 # Edit: services/user-service/app.js
 
 # 4. Stage and commit changes
-git add 6-user-service.yaml services/user-service/app.js
+git add user-service.yaml services/user-service/app.js
 git commit
 
 # This opens your editor with commit template
@@ -62,7 +62,7 @@ git add prometheus-values.yaml
 git commit -m "infra(monitoring): increase retention period"
 
 # Make third feature
-git add 6-user-service.yaml
+git add user-service.yaml
 git commit -m "feat(user-service): add caching"
 
 # Review commits
@@ -288,9 +288,9 @@ git pull origin main
 git checkout -b hotfix/1.1.1-security
 
 # Fix the issue
-# Edit: 6-user-service.yaml (security fix)
+# Edit: user-service.yaml (security fix)
 
-git add 6-user-service.yaml
+git add user-service.yaml
 git commit -m "fix(user-service): security vulnerability in auth"
 
 # Push hotfix branch

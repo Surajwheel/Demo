@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swaggerql
+  labels:
+    app: swaggerql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: swaggerql
+  template:
+    metadata:
+      labels:
+        app:  swaggerql
+    spec:
+      containers:
+        - name: swaggerql
+          image: swaggerql/swaggerql-postgres:latest
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: config-volume
+              mountPath: /local.yml
+          volumes:
+            - name: config-volume
+              configMap:
+                name: swaggerql-config
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: swaggerql
+spec:
+  selector:
+    app: swaggerql
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: ClusterIP
+
+
+

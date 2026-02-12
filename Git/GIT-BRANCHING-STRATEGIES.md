@@ -337,12 +337,12 @@ git pull origin main
 git checkout -b feature/user-auth
 
 # Step 2: Make changes
-# File: 6-user-service.yaml
+# File: user-service.yaml
 # - Add auth middleware
 # - Add secret configuration
 # - Update deployment
 
-git add 6-user-service.yaml
+git add user-service.yaml
 git commit -m "feat(user-service): add JWT authentication
 
 - Add JWT validation middleware
@@ -432,7 +432,7 @@ git pull origin develop
 git checkout -b feature/metrics-dashboard
 
 # Make changes to microservices and Kubernetes manifests
-# Example: 6-user-service.yaml, 7-product-service.yaml
+# Example: user-service.yaml, product-service.yaml
 
 git add *.yaml
 git commit -m "feat: add metrics dashboard to services"

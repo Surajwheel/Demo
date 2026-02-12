@@ -100,7 +100,7 @@ git pull origin develop
 git checkout -b feature/PROJ-123-user-authentication
 
 # Make changes and commit
-git add 6-user-service.yaml
+git add user-service.yaml
 git commit
 # (editor opens with template, fill in details)
 
